@@ -1,1 +1,66 @@
-
+{
+  "artist": "The Field Mice",
+  "title":  "If You Need Someone",
+  "genre": "Rock",
+  "year": 1991
+},
+{
+  "artist": "John Williams"
+  "title": "Prolouge"
+  "genre": "Soundtrack"
+  "year": 2001
+},
+{
+  "artist": "Ed Sheeran"
+  "title": "Shape of You"
+  "genre": "Pop"
+  "year": 2017
+},
+{
+  "artist": "Sylosis"
+  "title": "Calcified"
+  "genre": "Metal"
+  "year": 2020
+},
+{
+  "artist": "Cake"
+  "title": "Long Line of Cars"
+  "genre": "Rock"
+  "year": 2001
+},
+{
+  "artist": "Doja Cat"
+  "title": "Say So"
+  "genre": "Pop"
+  "year": 2019
+},
+{
+  "artist": "O.A.R."
+  "title": "Shattered [Turn The Car Around]"
+  "genre": "Pop"
+  "year": 2008
+},
+{
+  "artist": "Modern English"
+  "title": "Carry Me Down"
+  "genre": "Rock"
+  "year": 1982
+},
+{
+  "artist": "Ryuichi Sakamoto"
+  "title": "The Revenant - Main Theme"
+  "genre": "Soundtrack"
+  "year": 2016
+},
+{
+  "artist": ["Ryuichi Sakamoto", "alva noto"]
+  "title": "Church Dream"
+  "genre": "Soundtrack"
+  "year": 2016
+},
+{
+  "artist": "Kendrick Lamar"
+  "title": "HUMBLE."
+  "genre": "Rap"
+  "year": 2017
+}
