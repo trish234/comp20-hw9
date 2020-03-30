@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <head>
+  <script>
+
+    function loadJSON(){
+      request = new XMLHttpRequest();
+      request.open("GET", "set_list.json", true);
+      request.onreadystatechange = function () {
+        if(request.readyState == 4 && request.readyState == 200){
+          //JSON is ready
+          setList = JSON.parse(request.responseText);
+          text = '';
+          for (i in setList){
+            text += setList[i].title;
+          }
+          document.getElementById("list-here").innerHTML = text;
+        }
+        else if (request.readyState == 4 && request.readyState != 200){
+          //JSON load failed
+          document.getElementById("list-here").innerHTML = "Load failed";
+        }
+      }
+      request.send();
+    }
+  </script>
 </head>
 <body>
+  <div id="list-here"> Hi </div>
+  <script language="javascript">
+    loadJSON();
+  </script>
 </body>
 </html>
