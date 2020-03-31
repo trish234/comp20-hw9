@@ -2,18 +2,29 @@
 <head>
   <meta charset="utf-8"/>
   <script>
-    function loadJSON(){
+    function loadJSON(genre){
       request = new XMLHttpRequest();
       request.open("GET", "https://trish234.github.io/comp20-hw9/set_list.json", true);
       request.onreadystatechange = function () {
         if(request.readyState == 4 && request.status == 200){
           //JSON is ready
+          document.getElementById("list-here").innerHTML = '';
           setList = JSON.parse(request.responseText);
-          text = '';
           for (i in setList){
-            text += setList[i].title;
+            text = '';
+            text += "<b>" + setList[i].title + "</b>" + "<br />";
+            text += "Artist: " + setList[i].artist + "<br />";
+            songGenre = setList[i].genre;
+            text += "Genre: " + songGenre + "<br />";
+            text += "Released " + setList[i].year + "<br />" + "<br />";
+            if (genre == "Default"){
+              console.log("Default genre");
+              document.getElementById("list-here").innerHTML += text;
+            } else if (songGenre == genre){
+              console.log("MATCH");
+              document.getElementById("list-here").innerHTML += text;
+            }
           }
-          document.getElementById("list-here").innerHTML = text;
         }
         else if (request.readyState == 4 && request.status != 200){
           //JSON load failed
@@ -25,9 +36,30 @@
   </script>
 </head>
 <body>
-  <div id="list-here"> Hi </div>
-  <script language="javascript">
-    loadJSON();
+  <h1> Parts 2 and 3 </h1>
+    <script>
+    loadJSON("Default");
+    </script>
+  <h1> Part 4 </h1>
+  <form onsubmit="return false">
+    <select id="genreType">
+      <option value="Default">Choose genre...</option>
+      <option value="Rock">Rock</option>
+      <option value="Soundtrack">Soundtrack</option>
+      <option value="Pop">Pop</option>
+      <option value="Metal">Metal</option>
+      <option value="Rock">Rock</option>
+    </select>
+    <button onclick="callLoad()">Submit</button>
+  </form>
+  </br>
+  <div id="list-here"> Loading... </div>
+  <script>
+    function callLoad(){
+      var selectionBox = document.getElementById("genreType");
+      var currSelect = selectionBox.options[selectionBox.selectedIndex].value;
+      loadJSON(currSelect);
+    }
   </script>
 </body>
 </html>
